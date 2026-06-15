@@ -1,6 +1,6 @@
 # Aplikacja chmurowa ASP.NET Core MVC
 
-Webowa aplikacja chmurowa umożliwiająca bezpieczne przechowywanie i zarządzanie plikami użytkowników z poziomu przeglądarki.
+Webowa aplikacja chmurowa umożliwiająca przechowywanie i zarządzanie plikami użytkowników z poziomu przeglądarki.
 
 ## Technologie
 
