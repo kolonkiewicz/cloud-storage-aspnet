@@ -1,0 +1,53 @@
+﻿@model IEnumerable<FileModel>
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>Twoje pliki</h1>
+
+<form asp-controller="Home" asp-action="GoToAddFile" class="text-start">
+    <button type="submit" class="btn btn-primary btn-lg">Dodaj plik</button>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Nazwa pliku
+            </th>
+            <th>
+                Wielkość pliku
+            </th>
+            <th>
+                Data dodania
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserFileNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FileName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Size)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date_add)
+                </td>
+                <td>
+                    <a asp-action="Download" asp-route-id="@item.FileID">Download</a> |
+                    <a asp-action="Delete" asp-route-id="@item.FileID">Usuń</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
